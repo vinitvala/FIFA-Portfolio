@@ -1280,4 +1280,22 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
     background: none;
     font-family: inherit;
   }
+
+  @media screen and (min-width: 1920px) {
+    html {
+      font-size: 70%; /* Slightly larger for 4K screens */
+    }
+  }
+
+  @media screen and (max-width: 1366px) {
+    html {
+      font-size: 60%;
+    }
+  }
+
+  @media screen and (max-width: 1024px) {
+    html {
+      font-size: 55%;
+    }
+  }
 `;pu.createRoot(document.getElementById("root")).render(y.jsx(Q.StrictMode,{children:y.jsx(NS,{children:y.jsxs(Bk,{theme:cb,children:[y.jsx(fb,{}),y.jsx(ub,{})]})})}));
