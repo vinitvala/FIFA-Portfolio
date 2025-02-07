@@ -44,4 +44,22 @@ export const GlobalStyles = createGlobalStyle`
     background: none;
     font-family: inherit;
   }
+
+  @media screen and (min-width: 1920px) {
+    html {
+      font-size: 70%; /* Slightly larger for 4K screens */
+    }
+  }
+
+  @media screen and (max-width: 1366px) {
+    html {
+      font-size: 60%;
+    }
+  }
+
+  @media screen and (max-width: 1024px) {
+    html {
+      font-size: 55%;
+    }
+  }
 `

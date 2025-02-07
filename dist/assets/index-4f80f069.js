@@ -74,15 +74,14 @@ Error generating stack: `+o.message+`
             left: ${l}px !important;
           }
         `),()=>{document.head.removeChild(u)}},[t]),k.createElement(n4,{isPresent:t,childRef:r,sizeRef:i},k.cloneElement(e,{ref:r}))}const eu=({children:e,initial:t,isPresent:n,onExitComplete:r,custom:i,presenceAffectsLayout:o,mode:s})=>{const a=m1(i4),l=k.useId(),u=k.useMemo(()=>({id:l,initial:t,isPresent:n,custom:i,onExitComplete:c=>{a.set(c,!0);for(const f of a.values())if(!f)return;r&&r()},register:c=>(a.set(c,!1),()=>a.delete(c))}),o?void 0:[n]);return k.useMemo(()=>{a.forEach((c,f)=>a.set(f,!1))},[n]),k.useEffect(()=>{!n&&!a.size&&r&&r()},[n]),s==="popLayout"&&(e=k.createElement(r4,{isPresent:n},e)),k.createElement(Ja.Provider,{value:u},e)};function i4(){return new Map}function o4(e){return k.useEffect(()=>()=>e(),[])}const er=e=>e.key||"";function s4(e,t){e.forEach(n=>{const r=er(n);t.set(r,n)})}function a4(e){const t=[];return k.Children.forEach(e,n=>{k.isValidElement(n)&&t.push(n)}),t}const l4=({children:e,custom:t,initial:n=!0,onExitComplete:r,exitBeforeEnter:i,presenceAffectsLayout:o=!0,mode:s="sync"})=>{const a=k.useContext(td).forceRender||t4()[0],l=xv(),u=a4(e);let c=u;const f=k.useRef(new Map).current,d=k.useRef(c),m=k.useRef(new Map).current,v=k.useRef(!0);if(Zf(()=>{v.current=!1,s4(u,m),d.current=c}),o4(()=>{v.current=!0,m.clear(),f.clear()}),v.current)return k.createElement(k.Fragment,null,c.map(p=>k.createElement(eu,{key:er(p),isPresent:!0,initial:n?void 0:!1,presenceAffectsLayout:o,mode:s},p)));c=[...c];const x=d.current.map(er),S=u.map(er),g=x.length;for(let p=0;p<g;p++){const h=x[p];S.indexOf(h)===-1&&!f.has(h)&&f.set(h,void 0)}return s==="wait"&&f.size&&(c=[]),f.forEach((p,h)=>{if(S.indexOf(h)!==-1)return;const w=m.get(h);if(!w)return;const P=x.indexOf(h);let E=p;if(!E){const C=()=>{f.delete(h);const T=Array.from(m.keys()).filter(I=>!S.includes(I));if(T.forEach(I=>m.delete(I)),d.current=u.filter(I=>{const _=er(I);return _===h||T.includes(_)}),!f.size){if(l.current===!1)return;a(),r&&r()}};E=k.createElement(eu,{key:er(w),isPresent:!1,onExitComplete:C,custom:t,presenceAffectsLayout:o,mode:s},w),f.set(h,E)}c.splice(P,0,E)}),c=c.map(p=>{const h=p.key;return f.has(h)?p:k.createElement(eu,{key:er(p),isPresent:!0,presenceAffectsLayout:o,mode:s},p)}),k.createElement(k.Fragment,null,f.size?c:c.map(p=>k.cloneElement(p)))},u4=b.nav`
-  background: rgba(0, 0, 0, 0.7); /* Semi-transparent background */
-  width: 320px;
-  height: 100vh;
   position: fixed;
   left: 0;
   top: 0;
+  bottom: 0;
+  width: 200px;
+  background: rgba(0, 0, 0, 0.8);
+  z-index: 3;
   padding: 2rem 0;
-  box-shadow: 2px 0 10px rgba(0, 0, 0, 0.3);
-  z-index: 10; /* Ensure it is above the faded background */
 `,c4=b.ul`
   display: flex;
   flex-direction: column;
@@ -134,10 +133,12 @@ Error generating stack: `+o.message+`
   }
 `,x4=b.div`
   flex: 1;
+  margin-left: 200px;
   z-index: 2;
   overflow-y: auto;
   padding: 2rem;
-  padding-top: 4rem; /* Adjust this value based on your TopBar's height */
+  padding-top: 4rem;
+  position: relative;
 `,w4=b.div`
   position: fixed;
   bottom: 20px;
