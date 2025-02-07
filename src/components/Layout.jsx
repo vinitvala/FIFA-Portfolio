@@ -28,10 +28,12 @@ const LayoutContainer = styled.div`
 
 const ContentContainer = styled.div`
   flex: 1;
+  margin-left: 200px;
   z-index: 2;
   overflow-y: auto;
   padding: 2rem;
-  padding-top: 4rem; /* Adjust this value based on your TopBar's height */
+  padding-top: 4rem;
+  position: relative;
 `;
 
 const MusicControls = styled.div`

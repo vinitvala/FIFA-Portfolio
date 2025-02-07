@@ -3,16 +3,15 @@ import { NavLink } from 'react-router-dom'
 import styled from 'styled-components'
 import { motion } from 'framer-motion'
 
-const Nav = styled.nav`
-  background: rgba(0, 0, 0, 0.7); /* Semi-transparent background */
-  width: 320px;
-  height: 100vh;
+const NavContainer = styled.nav`
   position: fixed;
   left: 0;
   top: 0;
+  bottom: 0;
+  width: 200px;
+  background: rgba(0, 0, 0, 0.8);
+  z-index: 3;
   padding: 2rem 0;
-  box-shadow: 2px 0 10px rgba(0, 0, 0, 0.3);
-  z-index: 10; /* Ensure it is above the faded background */
 `
 
 const NavList = styled.ul`
@@ -68,7 +67,7 @@ const Navigation = () => {
   ]
 
   return (
-    <Nav>
+    <NavContainer>
       <Logo>Portfolio FC25</Logo>
       <NavList>
         {navItems.map((item) => (
@@ -84,7 +83,7 @@ const Navigation = () => {
           </NavItem>
         ))}
       </NavList>
-    </Nav>
+    </NavContainer>
   )
 }
 
